@@ -19,7 +19,7 @@ The Backend is built using Springboot Web Framework and Thymeleaf while the Fron
  
 **NOTE:** Please ensure you are connected to the internet when running the command to enable Maven download the necessary dependencies.
 
-- After the application builds successfully, run the following command to start the application: `mvn spring-boot:run`. The application should start with the backend service listening on `localhost:8080`.
+- After the application builds successfully, run the following command `mvn spring-boot:run` to start the application. The application should start with the backend service listening on `localhost:8080`.
 
 ### 3. Test the Application
 - Go to your web browser and enter the URL `http://localhost:8080/checkout`. You should see the Checkout Page where you can enter your card details and click on the proceed button to check if your details were entered correctly.
