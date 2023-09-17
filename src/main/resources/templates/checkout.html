@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="card-container">
+    <div class="card slide-in">
+        <div class="card-body">
+            <h2 class="card-title">Checkout</h2>
+            <p class="card-description">Please enter your card details to pay</p>
+            <div>
+                <img src="img/atm.jpg" class="card-image" alt="">
+            </div>
+            <div>
+                <input type="text" placeholder="Card Number" class="form-input" name="cardNumber">
+                <div class="error-message"></div>
+            </div>
+            <div style="display: flex;">
+                <div>
+                    <input type="text" placeholder="Card Expiry" class="form-input expiry" name="cardExpiry">
+                    <div class="error-message"></div>
+                </div>
+                <div>
+                    <input type="text" placeholder="CVV" class="form-input cvv" name="cvv">
+                    <div class="error-message"></div>
+                </div>
+            </div>
+            <button class="proceed-button" type="submit">Proceed</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.card').classList.add('slide-in');
+    });
+  </script>
+</body>
+</html>
