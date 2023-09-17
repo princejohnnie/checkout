@@ -6,7 +6,7 @@ It is divided into two parts: Frontend and Backend. The Frontend takes in the cr
 
 The Backend is built using Springboot Web Framework and Thymeleaf while the Frontend uses HTML, CSS and Javascript for styling and making API requests.
 
-## Basic Steps to run the Project
+## Basic Steps to run and test the Project
 ### 1. Download or Clone the Project from Github [here](https://github.com/princejohnnie/checkout)
 - Create a new folder in any directory on your computer, download and unzip the git file in that folder. You can also clone the project using the command lime or any terminal in your computer using the follwing command `git clone https://github.com/princejohnnie/checkout.git`.
 ### 2. Run the Application
