@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #400040;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    border: 2px solid #400040;
+    border-radius: 1rem;
+    max-width: 400px;
+    max-height: 800px;
+    background-color: white;
+  }
+
+  .card-body {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-title {
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .card-description {
+    text-align: center;
+  }
+
+  .card-image {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .form-input {
+    width: calc(100% - 0.5rem);
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    font-weight: bolder;
+    margin-top: 1rem;
+    outline: none;
+  }
+
+  .form-input + .error-message {
+    margin-top: 0.5rem;
+  }
+
+  .form-input.expiry {
+    margin-right: 0.5rem;
+  }
+
+  .form-input.cvv {
+    margin-left: 2rem;
+  }
+
+  .proceed-button {
+    width: 100%;
+    padding: 16px 48px;
+    background: #400040;
+    border: 10px;
+    box-shadow: none;
+    transition: background 0.3s;
+    text-transform: none;
+    font-size: 18px;
+    margin-top: 2rem;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    margin-left: 3rem;
+  }
+
+  .proceed-button:hover {
+    background: #000;
+  }
+
+  .error-message {
+    color: red;
+  }
+
+  .slide-in {
+    animation: slide-in 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  @keyframes slide-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+ }
