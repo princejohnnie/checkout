@@ -1,5 +1,5 @@
-# checkout
-## A simple credit card validation app
+# Checkout
+## A Simple Credit Card Validation App
 
 This project is designed to reduce the strain on an external payment system by takeing in a user's credit card information and validates it before sending it to any Payment API for processing.
 It is divided into two parts: Frontend and Backend. The Frontend takes in the credit card information and displays an error for incorrect entries. The Backend does the validation and returns reponse to the Frontend.
