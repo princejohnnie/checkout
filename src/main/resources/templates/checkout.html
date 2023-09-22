@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="./index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+
 <div class="card-container">
     <div class="card slide-in">
         <div class="card-body">
@@ -16,28 +19,77 @@
                 <img src="img/atm.jpg" class="card-image" alt="">
             </div>
             <div>
-                <input type="text" placeholder="Card Number" class="form-input" name="cardNumber">
-                <div class="error-message"></div>
+                <input type="text" placeholder="0000 0000 0000 0000" class="form-input" id="card_number" name="cardNumber">
+                <div class="card-error-message error"></div>
             </div>
-            <div style="display: flex;">
+            <div class="sub-input-field">
                 <div>
-                    <input type="text" placeholder="Card Expiry" class="form-input expiry" name="cardExpiry">
-                    <div class="error-message"></div>
+                    <input type="text" placeholder="MM/YY" class="form-input child" id="expiry_date" name="cardExpiry">
+                    <div class="expiry-error-message error"></div>
                 </div>
                 <div>
-                    <input type="text" placeholder="CVV" class="form-input cvv" name="cvv">
-                    <div class="error-message"></div>
+                    <input type="text" placeholder="123" class="form-input child" id="cvv" name="cvv">
+                    <div class="cvv-error-message error"></div>
                 </div>
             </div>
-            <button class="proceed-button" type="submit">Proceed</button>
+            <div>
+              <button class="proceed-button" type="submit">Proceed</button>
+              <div class="message"></div>
+            </div>
         </div>
     </div>
 </div>
 
+
 <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('.card').classList.add('slide-in');
-    });
-  </script>
+  $(document).ready(function() {
+  $(".proceed-button").click(function () {
+    var inputCardNumber = document.getElementById("card_number").value;
+    var inputExpiryDate = document.getElementById("expiry_date").value;
+    var inputCvv = document.getElementById("cvv").value;
+
+    $(".card-error-message").text("");
+    $(".expiry-error-message").text("");
+    $(".cvv-error-message").text("");
+    $(".message").text("");
+
+    if(inputCardNumber.length === 0 || inputExpiryDate.length === 0 || inputCvv.length === 0) {
+      $(".message").text("Please input your card details to continue");
+    } else {
+
+      var jsonData = {
+          cardNumber: inputCardNumber,
+          expiryDate: inputExpiryDate,
+          cvv: inputCvv
+        };
+
+        $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/validate-card",
+        data:  JSON.stringify(jsonData),
+        contentType: 'application/json',
+
+        success: function(result) {
+          $(".message").text("Your Card details are correct");
+
+        },
+        error: function(result) {
+
+          if (result.responseJSON.errors) {
+            $(".card-error-message").text(result.responseJSON.errors.cardNumber)
+
+            $(".expiry-error-message").text(result.responseJSON.errors.expiryDate)
+
+            $(".cvv-error-message").text(result.responseJSON.errors.cvv)
+          }
+
+        }
+
+      });
+
+    }
+  })
+ });
+</script>
 </body>
 </html>

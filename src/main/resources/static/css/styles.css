@@ -5,25 +5,21 @@ body {
   }
 
   .card-container {
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    display: flex;
   }
 
   .card {
     border: 2px solid #400040;
     border-radius: 1rem;
-    max-width: 400px;
-    max-height: 800px;
+    width: 400px;
     background-color: white;
+    margin-top: 50px;
   }
 
   .card-body {
-    padding: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
 
   .card-title {
@@ -39,34 +35,39 @@ body {
   }
 
   .card-image {
-    width: 100%;
-    max-width: 200px;
+    width: 200px;
   }
 
   .form-input {
-    width: calc(100% - 0.5rem);
     padding: 1rem;
     border: 1px solid #ccc;
     box-shadow: none;
     font-weight: bolder;
-    margin-top: 1rem;
+    width: 300px;
+    margin: 10 auto;
     outline: none;
   }
 
-  .form-input + .error-message {
-    margin-top: 0.5rem;
+  .sub-input-field {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 300px;
   }
 
-  .form-input.expiry {
-    margin-right: 0.5rem;
+  .form-input.child {
+    width: 130px;
+    margin: 3px;
   }
 
-  .form-input.cvv {
-    margin-left: 2rem;
+  .error {
+    margin: 3px;
+    color: red;
+    font-size: 14px;
   }
 
   .proceed-button {
-    width: 100%;
+    width: 300px;
     padding: 16px 48px;
     background: #400040;
     border: 10px;
@@ -74,19 +75,22 @@ body {
     transition: background 0.3s;
     text-transform: none;
     font-size: 18px;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: white;
     cursor: pointer;
     align-items: center;
-    margin-left: 3rem;
   }
 
   .proceed-button:hover {
-    background: #000;
+    background: #000000;
   }
 
-  .error-message {
-    color: red;
+  .message {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: green;
+    align-content: center;
   }
 
   .slide-in {

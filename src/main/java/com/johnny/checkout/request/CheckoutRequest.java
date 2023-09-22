@@ -1,9 +1,9 @@
 package com.johnny.checkout.request;
 
 public class CheckoutRequest {
-    private final String cardNumber;
-    private final String expiryDate;
-    private final String cvv;
+    private String cardNumber;
+    private String expiryDate;
+    private String cvv;
 
     public CheckoutRequest(String cardNumber, String expiryDate, String cvv) {
         this.cardNumber = cardNumber;
