@@ -22,6 +22,6 @@ The Backend is built using Springboot Web Framework and Thymeleaf which renders 
 - After the application builds successfully, run the following command `mvn spring-boot:run` to start the application. The application should start with the backend service listening on `localhost:8080`.
 
 ### 3. Test the Application
-- Go to your web browser and enter the URL `http://localhost:8080`. You should see the Checkout Page where you can enter your card details and click on the proceed button to check if the details entered is correct.
+- Go to your web browser and enter the URL `http://localhost:8080`. You should see the Checkout Page where you can enter your card details and click on the Proceed button to check if the details entered is correct.
 
 ## Thank you
