@@ -24,4 +24,6 @@ The Backend is built using Springboot Web Framework and Thymeleaf which renders 
 ### 3. Test the Application
 - Open your web browser and enter the URL `http://localhost:8080`. You should see the Checkout Page where you can enter your card details and click on the Proceed button to check if the details entered is correct.
 
+Alternatively, you can clone the code from Github using any code editor that supports Java (e.g IntelliJ IDEA, VS Code), and run the file named `CheckoutApplication.java`. Then proceed with Step 3 above.
+
 ## Thank you
