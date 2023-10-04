@@ -18,9 +18,9 @@ public class CheckoutService {
 
     public ResponseEntity<CheckoutResponse> checkCardDetails(CheckoutRequest checkoutRequest) {
 
-        String cardNumberResponse = checkCardNumber(checkoutRequest.getCardNumber());
-        boolean invalidExpiryDate = checkExpiryDate(checkoutRequest.getExpiryDate());
-        String cvvResponse = checkCvv(checkoutRequest.getCardNumber(), checkoutRequest.getCvv());
+        String cardNumberResponse = checkCardNumber(checkoutRequest.getCardNumber().trim());
+        boolean invalidExpiryDate = checkExpiryDate(checkoutRequest.getExpiryDate().trim());
+        String cvvResponse = checkCvv(checkoutRequest.getCardNumber().trim(), checkoutRequest.getCvv().trim());
 
 
         if (cardNumberResponse.isEmpty() && !invalidExpiryDate && cvvResponse.isEmpty()) {
@@ -115,7 +115,7 @@ public class CheckoutService {
             if (isSecond)
                 currentDigit = currentDigit * 2;
 
-            // Use normal and modulo division to handle cases (even position indexes) that make two digits after multiplying by 2
+            // Use normal and modulo division to handle cases (i.e even position indexes) that make two digits after multiplying by 2
             sum += currentDigit / 10;
             sum += currentDigit % 10;
 
